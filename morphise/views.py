@@ -47,7 +47,6 @@ def sign_up(request):
     elif User.objects.filter(email=email).exists():
         messages.error(request, 'Email is already registered.')
     else:
-        # Create the user
         user = User.objects.create_user(username=Username, email=email, password=password)
         user.save()
         messages.success(request, 'Account created successfully!')
