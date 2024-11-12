@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" type="text/css" href="/static/style.css">
+  <link rel="icon" href="https://images.deepai.org/art-image/0dd81f80711141ef953ce6d35eed37c5/morphise-icon-thumb.jpg">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />"
+  <title>Morphise</title>
+</head>
+</head>
+<body>
+  <div class="container">
+    {% csrf_token %}
+    <div class="sidebar">
+      <a href="/index">
+        <p>Morphise</p>
+      </a>
+      <ul>
+        <li><a href="https://www.google.com/search?q=Explore GPTs">Explore GPTs</a></li>
+        <li><a href="https://www.google.com/search?q=Previous 30 Dayss">Previous 30 Days</a></li>
+        <li><a href="https://www.google.com/search?q=CSS Selector Types">CSS Selector Types</a></li>
+        <li><a href="https://www.google.com/search?q=TCP/IP Model Overview">TCP/IP Model Overview</a></li>
+        <li><a href="https://www.google.com/search?q=Margin vs Padding Differences">Margin vs Padding Differences</a></li>
+        <li><a href="https://www.google.com/search?q=type of css">Types of CSS</a></li>
+        <li><a href="/index">New chat</a></li>
+        <li><a href="https://www.google.com/search?q=July">July</a></li>
+        <li><a href="https://www.google.com/search?q=Online Library SRS">Online Library SRS</a></li>
+      </ul>
+    </div>
+    <div class="typing-area">
+      <form method= "post" action="/aioutput" class="typing-form">
+        {% csrf_token %}  
+        <div class="input-wrapper">
+        <input type="text" class="typing-input" placeholder="Enter the Massage" required name="user_input">
+        <button class="icon material-symbols-rounded">Send</button>
+        </div>
+        <div class="action-buttons">
+          <span class="icon material-symbols-rounded">light_mode</span>
+          <span class="icon material-symbols-rounded">delete</span>
+        </div>
+      </form>
+    </div>
+    <div style="color: rgb(18 17 17);border: 12px solid white;border-radius: 12px;height: 34vh;background: #ad7cad" class="answersbo">{{value}}</div>
+  </div>
+  <script>
+    function getinput() {
+      var user_input = document.getElementById("user_input").value;
+      form.submit();
+    }
+  </script>
+</body>
+</html>

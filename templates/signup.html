@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" type="text/css" href="/static/style.css">
+	<link rel="icon"
+		href="https://images.deepai.org/art-image/0dd81f80711141ef953ce6d35eed37c5/morphise-icon-thumb.jpg">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+	<title>Morphise</title>
+</head>
+<body>
+	<div class="wrapper">
+		<nav class="nav">
+			<div class="nav-logo">
+				<a href="/index">
+					<p>Morphise</p>
+				</a>
+			</div>
+			<div class="nav-menu">
+				<ul>
+					<li><a href="/index" class="link active">Home</a></li>
+					<li><a href="/blog" class="link">Blog</a></li>
+					<li><a href="/services" class="link">Services</a></li>
+					<li><a href="/about" class="link">About</a></li>
+				</ul>
+			</div>
+			<div class="nav-button">
+				<button class="btn white-btn" id="loginBtn"><a href="/signin">Sign In</a></button>
+				<button class="btn" id="registerBtn"><a href="/signup">Sign Up</a></button>
+				<a href="/mainpage"><button class="btn" id="registerBtn">Guest user</button></a>
+			</div>
+			<div class="nav-menu-btn">
+				<i class="bx bx-menu"></i>
+			</div>
+		</nav>
+		<!----------------------------------------------Form Box------------------------------>
+		<div class="form-box">
+
+			<!----------registration form------->
+			<form method="post" action="/sign_up">
+				{% csrf_token %}
+				<div class="registration-container" id="register">
+					<div class="top">
+						<span>Have an account?<a href="/signin" onclick="register()">Login</a></span>
+						<header>Sign up</header>
+					</div>
+					<div class="two-form">
+						<div class="input-box">
+							<input type="text" class="input-field" placeholder="Firstname" id="Username"name="Username">
+							<i class="bx bx-user "></i>
+						</div>
+						<div class="input-box">
+							<input type="text" class="input-field" placeholder="Lastname"name="Lastname"id="Lastname">
+							<i class="bx bx-user "></i>
+						</div>
+					</div>
+					<div class="two-forms">
+						<div class="input-box">
+							<input type="email" class="input-fields" placeholder="Email" id="email"name="email">
+							<i class="bx bx-envelope"></i>
+						</div>
+						<div class="input-box">
+							<input type="password" class="input-fields" placeholder="Password" id="password"name="password">
+							<i class="bx bx-lock-alt"></i>
+						</div>
+						<div class="terms">
+							<input type="checkbox" id="terms-checkbox"> I agree to the <a href="#" target="_blank">Terms
+								and Conditions</a>
+						</div>
+						<div class="input-box">
+							<input type="submit" class="submit" value="Register" onclick="signup()">
+						</div>
+					</div>
+			</form>
+			<script>
+				function signup() {
+					var Username=document.getElementById("Username")
+					var email = document.getElementById("email").value;
+					var password = document.getElementById("password").value;
+					var terms = document.getElementById("terms-checkbox").checked;
+					if (fullname == "") {
+						alert("Please enter Your Fullname..!");
+					}
+					if (email == "") {
+						alert("Please enter Your Email..!");
+					}
+					if (password == "") {
+						alert("Please enter Your Password..!");
+					}
+					if (!terms) {
+						alert("Please agree to the Terms and Conditions.");
+					}
+					form.submit();
+				}
+			</script>
+		</div>
+	</div>
+	</div>
+</body>
+</html>
