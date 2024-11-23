@@ -8,7 +8,7 @@ def ai_model(command):
     "temperature": 1,
     "top_p": 0.95,
     "top_k": 64,
-    "max_output_tokens": 500,
+    "max_output_tokens": 2000,
     "response_mime_type": "text/plain",
     }
 
