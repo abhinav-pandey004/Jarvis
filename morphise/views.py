@@ -33,7 +33,7 @@ def login_view(request):
             messages.error(request, 'Invalid username or password')
 
     return render(request,'signin.html')
-
+ 
 def sign_up(request):
     if request.method=="POST":
         Username=request.POST.get('Username')
